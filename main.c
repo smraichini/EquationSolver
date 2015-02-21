@@ -60,7 +60,8 @@ number calcX1(int a, int b, int c, int real,float det)
     }
     else
     {
-        x1.real=(-b+sqrt(det)/(2*a));
+        x1.real=-b+sqrt(det);
+        x1.real=x1.real/(2*a);
         x1.immaginary=0;
     }
     return x1;
@@ -76,7 +77,8 @@ number x2;
     }
     else
     {
-        x2.real=(-b-sqrt(det))/2*a;
+        x2.real=-b-sqrt(det);
+        x2.real=x2.real/(2*a);
         x2.immaginary=0;
     }
 return x2;
@@ -94,7 +96,7 @@ float determinant(int a, int b, int c, int *real)
     else
     {
      *real=1;
-      det=(d);
+      det=d;
     }
     
     return det;
