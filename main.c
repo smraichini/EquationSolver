@@ -47,7 +47,7 @@ void solutionCalculation(int a,int b,int c, number *x1, number *x2, int *real)
 void printSolution(number x1,number x2)
 {
     printf("X1= %f + %fi\n",x1.real,x1.immaginary);
-    printf("X2= %f + %fi\n",x2.real,x2.immaginary);
+    printf("X2= %f - %fi\n",x2.real,x2.immaginary);
 }
 
 number calcX1(int a, int b, int c, int real,float det)
@@ -56,7 +56,8 @@ number calcX1(int a, int b, int c, int real,float det)
     if(real==0)
     {
         x1.real=-b;
-        x1.immaginary=sqrt(det);
+        x1.real=x1.real/(2*a);
+        x1.immaginary=(sqrt(det)/(2*a));
     }
     else
     {
@@ -73,7 +74,8 @@ number x2;
     if(real==0)
     {
         x2.real=-b;
-        x2.immaginary=det;
+        x2.real=x2.real/(2*a);
+        x2.immaginary=(sqrt(det)/(2*a));
     }
     else
     {
