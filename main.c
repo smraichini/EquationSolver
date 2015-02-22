@@ -27,14 +27,14 @@ float determinant(int a, int b, int c, int *real);
 
 void insertCoefficent(int *a,int *b,int *c)
 {
-printf("Inserici il il coefficente A: ");                      //Funzione che richiede come imput i
-    scanf("%d",a);                                             //coefficenti dell'equazione
-    
+    printf("Inserici il il coefficente A: ");                      //Funzione che richiede come imput i
+    scanf("%d",a);                                                 //coefficenti dell'equazione
+          
     printf("Inserici il il coefficente B: ");
     scanf("%d",b);
     
     printf("Inserici il il coefficente C: ");
-    scanf("%d",c);
+    scanf("%d",c);   
 }
 void solutionCalculation(int a,int b,int c, number *x1, number *x2, int *real)
 {
@@ -110,6 +110,13 @@ int main(int argc, char** argv)
     int a,b,c;
     int real=1;
     insertCoefficent(&a,&b,&c);
+    while(a==0)
+    {
+        printf("Un'equazione di secondo grado non può avere il coefficente di A nullo,"
+                " perfavore reinserire i coefficenti per un equazione di secondo grado\n");
+        insertCoefficent(&a,&b,&c);
+    }
+    
     solutionCalculation(a,b,c,&x1,&x2,&real);
     printSolution(x1,x2);
 
